@@ -1,10 +1,9 @@
 # Dockerfile for icinga2 with icinga-web
-# https://github.com/jjethwa/icinga2
-# Icinga 2.3.4
+# https://github.com/base2services/icinga2-docker
 
 FROM debian:wheezy
 
-MAINTAINER Jordan Jethwa
+MAINTAINER base2Services
 
 ENV DEBIAN_FRONTEND noninteractive
 
