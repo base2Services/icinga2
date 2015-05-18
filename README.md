@@ -13,17 +13,17 @@ image.
 
 ## Automated build
 
-    docker pull jordan/icinga2
+    docker pull base2services/icinga2-docker
 
 ## Usage
 
 Start a new container and bind to host's port 80
 
-    sudo docker run -p 80:80 -t jordan/icinga2:latest
+    sudo docker run -p 80:80 -t base2services/icinga2-docker:latest
 
 Start a new container and supply the icinga and icinga_web password
 
-    sudo docker run -e ICINGA_PASSWORD="icinga" -e ICINGA_WEB_PASSWORD="icinga_web" -t jordan/icinga2:latest
+    sudo docker run -e ICINGA_PASSWORD="icinga" -e ICINGA_WEB_PASSWORD="icinga_web" -t base2services/icinga2-docker:latest
 
 The Icinga Web interface is accessible at http://localhost/icinga-web with the credentials root:password
 
