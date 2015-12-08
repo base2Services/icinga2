@@ -7,23 +7,23 @@ image.
 ## Image details
 
 1. Based on debian:jessie
-1. Supervisor, Apache2, MySQL, icinga2, icinga-web, and icingaweb2
+1. Supervisor, Apache2, PostgreSQL, icinga2, icinga-web, and icingaweb2
 1. No SSH.  Use sudo docker exec -it <CONTAINER_NAME> bash or [nsenter](https://github.com/jpetazzo/nsenter)
 1. If no passwords are not supplied, they will be randomly generated and shown via stdout.
 
 ## Automated build
 
-    docker pull base2services/icinga2-docker
+    docker pull base2/icinga2-docker-postgres
 
 ## Usage
 
 Start a new container and bind to host's port 80
 
-    sudo docker run -p 80:80 -t base2services/icinga2-docker:latest
+    sudo docker run -p 80:80 -t base2/icinga2-docker-postgres:latest
 
 Start a new container and supply the icinga and icinga_web password
 
-    sudo docker run -e ICINGA_PASSWORD="icinga" -e ICINGA_WEB_PASSWORD="icinga_web" -t base2services/icinga2-docker:latest
+    sudo docker run -e ICINGA_PASSWORD="icinga" -e ICINGA_WEB_PASSWORD="icinga_web" -t base2/icinga2-docker-postgres:latest
 
 The Icinga Web interface is accessible at http://localhost/icinga-web with the credentials root:password
 
@@ -45,6 +45,6 @@ DEBIAN_SYS_MAINT_PASSWORD
 /etc/icinga2
 /etc/icinga-web
 /etc/icingaweb2
-/var/lib/mysql
+/var/lib/postgresql/data
 /var/lib/icinga2
 ```
